@@ -6,20 +6,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="js-clock">
-            <h1>00:00</h1>
+        <div class="contents">
+            <div class="js-clock">
+                <h1>00:00</h1>
+            </div>
+            <form class="js-form form">
+                <label for="formLabel">What is your name?</label>
+                <input id="formLabel" type="text">
+            </form>
+            <h4 class="js-greeting greeting"></h4>
+            <form action="" class="js-toDoForm">
+                <label for="toDoLabel">What is your work today?</label>
+                <input id="toDoItem" type="text" >
+            </form>
+            <ul class="js-toDoList"></ul>
         </div>
-        <form class="js-form form">
-            <input type="text" placeholder="What is your name?">
-        </form>
-        <h4 class="js-greeting greeting"></h4>
-        <form action="" class="js-toDoForm">
-            <label for="toDoLabel">What a to do</label>
-            <input id="toDoItem" type="text" >
-        </form>
-        <ul class="js-toDoList"></ul>
         <span class="js-weather"></span>
 
         <script src="clock.js"></script>
