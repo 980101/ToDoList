@@ -1,7 +1,7 @@
 # ToDoList
-vanilla JS를 이용해 toDoList를 만들어 보았다.
+Make todo list with vanilla JS.
 
-## 스크린샷
+## SreenShot📷
 1. 메인 화면
 
 ![toDoList-1](https://user-images.githubusercontent.com/47620950/114551997-102c3d80-9c9f-11eb-9ee8-022d0ba81f52.PNG)
