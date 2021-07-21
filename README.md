@@ -1,6 +1,8 @@
 # todo list
 Make todo list with HTML, CSS, vanilla JS
 
+You can check this [here](https://980101.github.io/todo-list/index.html) 😀
+
 ## Sreen Shots 📷
 ◻ 기본 화면
 
