@@ -1,11 +1,6 @@
 :root {
   /* Color */
   --white-color: #ecf0f1;
-
-  /* Font Size */
-  --font-large: 132px;
-  --font-midium: 36px;
-  --font-regular: 24px;
 }
 
 * {
@@ -28,6 +23,12 @@ ul {
   list-style: none;
 }
 
+input[type="text"] {
+  border: none;
+  border-bottom: 1px solid var(--white-color);
+  background: none;
+}
+
 h1 {
   font-size: 132px;
 }
@@ -36,12 +37,12 @@ h4 {
   font-size: 36px;
 }
 
-.js-weather {
-  position: absolute;
-  bottom: 10px;
-  right: 50px;
+/* 사용자 설정 in body */
+.js-form {
+  margin: 20px;
 }
 
+/* 스케줄 관리 in body */
 .js-toDoForm {
   display: flex;
   flex-direction: column;
@@ -52,10 +53,11 @@ h4 {
   font-size: 24px;
 }
 
-.js-toDoForm input {
-  border: none;
-  border-bottom: 1px solid var(--white-color);
-  background-color: transparent;
+/* 날씨 in body */
+.js-weather {
+  position: absolute;
+  bottom: 10px;
+  right: 50px;
 }
 
 .form,

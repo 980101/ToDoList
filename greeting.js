@@ -1,6 +1,7 @@
-const form = document.querySelector('.js-form'),
-    input = form.querySelector('input'),
-    greeting = document.querySelector('.js-greeting');
+const form = document.querySelector('.js-form');
+// form이 interface라면, formData가 맞는 것 아닌가 ?
+const input = form.querySelector('input');
+const greeting = document.querySelector('.js-greeting');
 
 const USER_LS = "currentUser",
     SHOWING_CN = "showing";

@@ -8,25 +8,26 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <!-- 시계 -->
+        <!-- 시계 in body -->
         <div class="js-clock">
             <h1>00:00</h1>
         </div>
 
-        <!-- 사용자 설정 -->
+        <!-- 사용자 설정 in body -->
         <form class="js-form form">
-            <input type="text" placeholder="What is your name?">
+            <label for="userInfo">What's your name?</label>
+            <input id="userInfo" type="text">
         </form>
         <h4 class="js-greeting greeting"></h4>
 
-        <!-- 스케줄 관리 -->
+        <!-- 스케줄 관리 in body -->
         <form action="" class="js-toDoForm">
-            <label for="toDoLabel">What a to do</label>
+            <label for="toDoItem">What a to do</label>
             <input id="toDoItem" type="text" >
         </form>
         <ul class="js-toDoList"></ul>
 
-        <!-- 날씨 -->
+        <!-- 날씨 in body -->
         <span class="js-weather"></span>
 
 
