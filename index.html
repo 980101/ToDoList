@@ -16,25 +16,27 @@
         <!-- 사용자 설정 in body -->
         <form class="js-form form">
             <label for="userInfo">What's your name?</label>
-            <input id="userInfo" type="text">
+            <input id="userInfo" type="text" autocomplete="off">
         </form>
         <h4 class="js-greeting greeting"></h4>
 
         <!-- 스케줄 관리 in body -->
         <form action="" class="js-toDoForm">
             <label for="toDoItem">What a to do</label>
-            <input id="toDoItem" type="text" >
+            <input id="toDoItem" type="text" autocomplete="off">
         </form>
         <ul class="js-toDoList"></ul>
 
         <!-- 날씨 in body -->
-        <span class="js-weather"></span>
-
+        <div class="js-weather">
+            <img class="icon" src="" alt="">
+            <span class="info"></span>
+        </div>
 
         <script src="clock.js"></script>
         <script src="greeting.js"></script>
         <script src="todo.js"></script>
         <script src="weather.js"></script>
-        <!-- <script src="bg.js"></script> -->
+        <script src="bg.js"></script>
     </body>
 </html>

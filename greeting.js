@@ -3,9 +3,10 @@ const form = document.querySelector('.js-form');
 const input = form.querySelector('input');
 const greeting = document.querySelector('.js-greeting');
 
-const USER_LS = "currentUser",
-    SHOWING_CN = "showing";
+const USER_LS = "currentUser";
+const SHOWING_CN = "showing";
 
+/* 사용자의 이름을 받아와서, local storage에 저장한다 */
 function saveName(text) {
     localStorage.setItem(USER_LS, text);
 }

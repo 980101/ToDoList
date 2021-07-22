@@ -27,6 +27,12 @@ input[type="text"] {
   border: none;
   border-bottom: 1px solid var(--white-color);
   background: none;
+  color: var(--white-color);
+  caret-color: var(--white-color);
+}
+
+input[type="text"]:focus {
+  outline: none;
 }
 
 h1 {
@@ -39,7 +45,7 @@ h4 {
 
 /* 사용자 설정 in body */
 .js-form {
-  margin: 20px;
+  margin: 20px 0;
 }
 
 /* 스케줄 관리 in body */
@@ -50,6 +56,7 @@ h4 {
 }
 
 .js-toDoForm label {
+  margin: 5px;
   font-size: 24px;
 }
 
@@ -58,6 +65,12 @@ h4 {
   position: absolute;
   bottom: 10px;
   right: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.js-weather .icon {
+  margin: 5px;
 }
 
 .form,
