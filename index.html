@@ -11,7 +11,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
     </head>
     <body>
-        <!-- 시계 in body -->
+        <!-- 시계 -->
         <div class="js-clock">
             <h1>00:00</h1>
             
@@ -21,21 +21,26 @@
             </div>
         </div>
 
-        <!-- 사용자 설정 in body -->
-        <form class="js-form form">
-            <label for="userInfo">What's your name?</label>
-            <input id="userInfo" type="text" autocomplete="off">
-        </form>
-        <h4 class="js-greeting greeting"></h4>
+        <!-- 본문 -->
+        <div class="list">
+            <!-- 사용자 입력 in list -->
+            <form class="js-form form">
+                <label for="userInfo">What's your name?</label>
+                <input id="userInfo" type="text" autocomplete="off">
+            </form>
+            <h4 class="js-greeting greeting"></h4>
 
-        <!-- 스케줄 관리 in body -->
-        <form action="" class="js-toDoForm">
-            <label for="toDoItem">What a to do</label>
-            <input id="toDoItem" type="text" autocomplete="off">
-        </form>
-        <ul class="js-toDoList"></ul>
+            <!-- 리스트 입력 in list -->
+            <form action="" class="js-toDoForm">
+                <label for="toDoItem">What a to do</label>
+                <input id="toDoItem" type="text" autocomplete="off">
+            </form>
 
-        <!-- 날씨 in body -->
+            <!-- 리스트 내용 in list -->
+            <ul class="js-toDoList"></ul>
+        </div>
+
+        <!-- 날씨 -->
         <div class="js-weather">
             <img class="icon" src="" alt="">
             <span class="info"></span>

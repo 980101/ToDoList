@@ -1,6 +1,6 @@
-const toDoForm = document.querySelector(".js-toDoForm"),
-    toDoInput = toDoForm.querySelector("input"),    // element의 이름을 가져 오는 거니깐 form으로 하면 에러
-    toDoList = document.querySelector(".js-toDoList");
+const toDoForm = document.querySelector(".js-toDoForm");
+const toDoInput = toDoForm.querySelector("input");    // element의 이름을 가져 오는 거니깐 form으로 하면 에러
+const toDoList = document.querySelector(".js-toDoList");
 
 const TODOS_LS = "toDos";
 
