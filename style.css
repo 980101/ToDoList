@@ -43,6 +43,11 @@ input[type="text"]:focus {
   outline: none;
 }
 
+button {
+  border: none;
+  background: none;
+}
+
 h1 {
   font-size: 132px;
 }
@@ -97,6 +102,41 @@ h4 {
 .list .js-toDoForm label {
   margin: 5px;
   font-size: 24px;
+}
+
+/* 리스트 내용 in list */
+.list .js-toDoList {
+  margin: 10px 0;
+}
+
+.list .js-toDoList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px;
+  height: 100px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: solid 1px var(--gray-color);
+  border-radius: 10px;
+}
+
+.list .js-toDoList li div {
+  width: 20px;
+  height: 20px;
+  border: solid 1px var(--gray-color);
+  border-radius: 5px;
+}
+
+.list .js-toDoList li span {
+  width: 100%;
+  margin: 0 5px;
+  text-align: start;
+}
+
+.list .js-toDoList li button {
+  width: 20px;
+  height: 20px;
 }
 
 /* 날씨 in body */

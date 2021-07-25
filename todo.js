@@ -23,15 +23,25 @@ function saveToDos() {
 
 function paintToDo(text) {
     const li = document.createElement("li");
-    const delBtn = document.createElement("button");
+    const check = document.createElement("div");
     const span = document.createElement("span");
+    const delBtn = document.createElement("button");
     const newId = toDos.length + 1;
+
+    // check in li 생성
+    
+    // span in li 생성
+    span.innerText = text;
+    // delBtn in li 생성
     delBtn.innerText = "❌";
     delBtn.addEventListener("click", deleteToDo);
-    span.innerText = text;
-    li.appendChild(delBtn);
+    
+    li.appendChild(check);
     li.appendChild(span);
+    li.appendChild(delBtn);
     li.id = newId;
+
+    // li 표시
     toDoList.appendChild(li);
     const toDoObj = {
         text: text,
