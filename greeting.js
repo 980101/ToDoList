@@ -1,7 +1,7 @@
 const form = document.querySelector('.js-form');
-// form이 interface라면, formData가 맞는 것 아닌가 ?
 const input = form.querySelector('input');
 const greeting = document.querySelector('.js-greeting');
+const user = document.querySelector(".name");
 
 const USER_LS = "currentUser";
 const SHOWING_CN = "showing";
@@ -23,15 +23,19 @@ function handleSubmit(event) {
     saveName(currentValue);
 }
 
+/* 사용자 데이터가 */
+
+/* 없을 때 */
 function askForName() {
     form.classList.add(SHOWING_CN);
     form.addEventListener('submit', handleSubmit);
 }
 
+/* 있을 때 */
 function paintGreeting(text) {
     form.classList.remove(SHOWING_CN);
     greeting.classList.add(SHOWING_CN);
-    greeting.innerHTML = `Hello ${text}`;
+    user.innerHTML = `Hello, ${text}`;
 }
 
 function loadName() {

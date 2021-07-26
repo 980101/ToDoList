@@ -29,11 +29,18 @@ function paintToDo(text) {
     const newId = toDos.length + 1;
 
     // check in li 생성
-    
+    // check 되었을 때
+    check.addEventListener("click", ()=> {
+        check.classList.toggle("toggled");
+        span.classList.toggle("toggled");
+    });
+
     // span in li 생성
     span.innerText = text;
     // delBtn in li 생성
-    delBtn.innerText = "❌";
+    // delBtn에 모양 적용
+    delBtn.setAttribute("class", "fas fa-times");
+
     delBtn.addEventListener("click", deleteToDo);
     
     li.appendChild(check);
