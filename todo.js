@@ -33,6 +33,15 @@ function paintToDo(text) {
     check.addEventListener("click", ()=> {
         check.classList.toggle("toggled");
         span.classList.toggle("toggled");
+
+        if (check.classList.contains("toggled")) {
+            // check 요소 안에 '체크 아이콘'을 추가한다.
+            const icon = document.createElement("i");
+            icon.setAttribute("class", "fas fa-check");
+            check.appendChild(icon);
+        } else {
+            check.removeChild(document.querySelector(".fa-check"));
+        }
     });
 
     // span in li 생성
