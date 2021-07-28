@@ -15,3 +15,7 @@ You can check this [here](https://980101.github.io/todo-list/index.html) 😀
 ◻ 일정이 입력된 화면
 
 ![content](https://user-images.githubusercontent.com/47620950/127159927-bcb278e6-bfe0-4025-a857-20c8bdeec728.PNG)
+
+## 수정해야 할 부분 🛠
+- [ ] list에 스크롤 기능 추가
+- [ ] 반응형으로 구현
