@@ -4,9 +4,14 @@ Make todo list with HTML, CSS, vanilla JS
 You can check this [here](https://980101.github.io/todo-list/index.html) 😀
 
 ## Sreen Shots 📷
-◻ 기본 화면
+◻ 기본 화면 - 큰 화면
 
 ![main](https://user-images.githubusercontent.com/47620950/127159316-e8d5b7b7-34ca-4d36-8eb4-a075776ed906.PNG)
+
+◻ 기본 화면 - 작은 화면
+
+![main-responsive](https://user-images.githubusercontent.com/47620950/128888819-c2cf8213-6c0d-4318-b480-173726121bcb.PNG)
+
 
 ◻ 기본 화면 ( 사용자 등록 )
 
