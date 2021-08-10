@@ -15,9 +15,11 @@
 
 body {
   display: flex;
-  justify-content: space-between;
-  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  min-width: 350px;
   height: 100vh;
+  padding: 20px;
   background: rgb(148, 187, 233);
   background: linear-gradient(
     319deg,
@@ -66,7 +68,7 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  height: 350px;
 }
 
 .js-clock .detail {
@@ -85,9 +87,9 @@ span {
   display: flex;
   flex-direction: column;
   align-items: start;
-  width: 40%;
-  margin: 20px;
-  padding: 30px 20px 30px 30px;
+  width: 100%;
+  height: calc(100vh - 350px);
+  padding: 20px;
   background-color: var(--white-color);
   border-radius: 20px;
 }
@@ -134,7 +136,6 @@ span {
 /* 리스트 내용 in list */
 .list .js-toDoList {
   width: 100%;
-  margin: 10px 0;
   overflow-y: scroll;
 }
 
@@ -155,12 +156,13 @@ span {
   align-items: center;
   width: 350px;
   height: 100px;
-  margin-bottom: 10px;
+  margin-top: 20px;
   padding: 10px;
   border: solid 1px var(--light-gray-color);
   border-radius: 10px;
 }
 
+/* (체크 박스) */
 .list .js-toDoList li div {
   width: 20px;
   height: 20px;
@@ -179,6 +181,7 @@ span {
   background-color: green;
 }
 
+/* (할일 이름) */
 .list .js-toDoList li span {
   width: 100%;
   margin: 0 10px;
@@ -192,6 +195,7 @@ span {
   color: var(--dark-gray-color);
 }
 
+/* (할일 삭제 버튼) */
 .list .js-toDoList li button {
   width: 20px;
   height: 20px;
@@ -200,8 +204,8 @@ span {
 /* 날씨 in body */
 .js-weather {
   position: absolute;
-  bottom: 10px;
-  left: 30px;
+  top: 10px;
+  right: 30px;
   display: flex;
   align-items: center;
 }
@@ -219,11 +223,23 @@ span {
   display: flex;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+@media screen and (min-width: 1010px) {
+  body {
+    flex-direction: row;
   }
-  to {
-    opacity: 1;
+
+  .js-clock {
+    width: 60%;
+  }
+
+  .list {
+    width: 40%;
+    height: 100%;
+  }
+
+  .js-weather {
+    right: 0;
+    left: 20px;
+    top: 0;
   }
 }
