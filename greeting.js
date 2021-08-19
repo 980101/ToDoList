@@ -1,8 +1,9 @@
 const form = document.querySelector('.js-form');
 const input = form.querySelector('input');
 const greeting = document.querySelector('.js-greeting');
-const user = document.querySelector(".name");
-const logoutBtn = greeting.querySelector('.delete');
+const userData = document.querySelector('.userData');
+const user = userData.querySelector(".name");
+const logoutBtn = userData.querySelector('.delete');
 
 const USER_LS = "currentUser";
 const SHOWING_CN = "showing";
@@ -32,6 +33,7 @@ function askForName() {
     form.classList.add(SHOWING_CN);
     greeting.classList.remove(SHOWING_CN);
     form.addEventListener('submit', handleSubmit);
+    input.value = null;
 }
 
 /* 있을 때 */
@@ -61,3 +63,11 @@ function init() {
 }
 
 init();
+
+userData.addEventListener('mouseover', () => {
+    logoutBtn.classList.add("show");
+});
+
+userData.addEventListener('mouseout', () => {
+    logoutBtn.classList.remove("show");
+});

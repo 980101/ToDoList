@@ -113,12 +113,22 @@ span {
   color: var(--dark-gray-color);
 }
 
-.list .js-greeting .fa-times-circle {
-  position: absolute;
-  top: 65px;
-  left: 75%;
+.list .js-greeting .userData {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+/* (사용자 데이터 삭제 버튼) */
+.list .js-greeting .userData .delete {
+  display: none;
+  margin-left: 10px;
   font-size: 20px;
   color: var(--dark-gray-color);
+}
+
+.list .js-greeting .userData .delete.show {
+  display: block;
 }
 
 /* 리스트 입력 in list */
@@ -129,7 +139,7 @@ span {
 }
 
 .list .js-toDoForm label {
-  margin: 5px;
+  margin-bottom: 5px;
   font-size: 24px;
 }
 
@@ -208,6 +218,7 @@ span {
   right: 30px;
   display: flex;
   align-items: center;
+  width: fit-content;
 }
 
 .js-weather .icon {
@@ -238,8 +249,9 @@ span {
   }
 
   .js-weather {
-    right: 0;
+    top: auto;
+    bottom: 10px;
     left: 20px;
-    top: 0;
+    height: fit-content;
   }
 }
