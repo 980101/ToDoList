@@ -3,7 +3,7 @@ Make todo list with HTML, CSS, vanilla JS
 
 You can check this [here](https://980101.github.io/todo-list/index.html) 😀
 
-## Sreen Shots 📷
+## Screen Shots 📷
 ◻ 기본 화면 - 큰 화면
 
 ![main](https://user-images.githubusercontent.com/47620950/127159316-e8d5b7b7-34ca-4d36-8eb4-a075776ed906.PNG)
