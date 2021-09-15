@@ -13,45 +13,52 @@
     </head>
     <body>
         <!-- 시계 -->
-        <div class="js-clock">
+        <div class="clock">
             <h1>00:00</h1>
             
             <div class="detail">
-                <span class="clock">AM</span>
-                <span class="second">00</span>
+                <span class="detail-meridiem">AM</span>
+                <span class="detail-second">00</span>
             </div>
         </div>
 
         <!-- 본문 -->
-        <div class="list">
-            <!-- 사용자 입력 in list -->
-            <form class="js-form form">
-                <label for="userInfo">What's your name?</label>
-                <input id="userInfo" type="text" autocomplete="off">
-            </form>
-            <div class="js-greeting greeting">
-                <div class="userData">
-                    <span class="name"></span>
-                    <button class="delete"><i class="fas fa-times-circle"></i></button>
+        <main>
+            <!-- 사용자 입력 (로그아웃) in main -->
+            <form class="form-user-logout form">
+                <div class="input-user">
+                    <label for="name">What's your name?</label>
+                    <input id="name" type="text" autocomplete="off">
                 </div>
-                <span class="guide">These are your today tasks</span>
-            </div>
+                <button class="btn-login">입력</button>
+            </form>
+            <!-- 사용자 입력 (로그인) in main -->
+            <section class="user-login greeting">
+                <div class="info">
+                    <span class="info-name"></span>
+                    <button class="btn-logout"><i class="fas fa-times-circle"></i></button>
+                </div>
+                <span class="sign">These are your today tasks</span>
+            </section>
 
-            <!-- 리스트 입력 in list -->
-            <form action="" class="js-toDoForm">
-                <label for="toDoItem">What to do</label>
-                <input id="toDoItem" type="text" autocomplete="off">
+            <!-- 리스트 입력 in main -->
+            <form class="form-list">
+                <div class="input-list">
+                    <label for="item">What to do</label>
+                    <input id="item" type="text" autocomplete="off">
+                </div>
+                <button class="btn-add">입력</button>
             </form>
 
-            <!-- 리스트 내용 in list -->
-            <ul class="js-toDoList"></ul>
-        </div>
+            <!-- 리스트 내용 in main -->
+            <ul class="ul-list"></ul>
+        </main>
 
         <!-- 날씨 -->
-        <div class="js-weather">
-            <img class="icon" src="" alt="">
-            <span class="info"></span>
-        </div>
+        <aside class="weather">
+            <img class="weather-icon" src="" alt="">
+            <span class="weather-info"></span>
+        </aside>
 
         <script src="clock.js"></script>
         <script src="todo.js"></script>

@@ -1,5 +1,5 @@
-const weather = document.querySelector(".js-weather .info");
-const icon = document.querySelector(".js-weather .icon");
+const weather = document.querySelector(".weather-info");
+const icon = document.querySelector(".weather-icon");
 
 const API_KEY = "192879c0c04e03cc3c1bf6c3eda9476d";
 const COORDS = "coords";

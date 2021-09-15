@@ -1,9 +1,9 @@
-const form = document.querySelector('.js-form');
-const input = form.querySelector('input');
-const greeting = document.querySelector('.js-greeting');
-const userData = document.querySelector('.userData');
-const user = userData.querySelector(".name");
-const logoutBtn = userData.querySelector('.delete');
+const form = document.querySelector('.form-user-logout');
+const input = form.querySelector('.form-user-logout #name');
+const greeting = document.querySelector('.user-login');
+const user = document.querySelector('.user-login .info');
+const user_name = document.querySelector(".user-login .info-name");
+const user_logout = document.querySelector('user-login .btn-logout');
 
 const USER_LS = "currentUser";
 const SHOWING_CN = "showing";
@@ -40,8 +40,11 @@ function askForName() {
 function paintGreeting(text) {
     form.classList.remove(SHOWING_CN);
     greeting.classList.add(SHOWING_CN);
-    user.innerHTML = `Hello, ${text}`;
+    user_name.innerHTML = `Hello, ${text}`;
 
+    user_name.addEventListener('mouseover', () => logoutBtn.classList.add("show"));
+    user_name.addEventListener('mouseout', () => logoutBtn.classList.remove("show"));
+    
     logoutBtn.addEventListener('click', () => {
         deleteName();
         loadName();
@@ -64,10 +67,10 @@ function init() {
 
 init();
 
-userData.addEventListener('mouseover', () => {
-    logoutBtn.classList.add("show");
-});
+// userData.addEventListener('mouseover', () => {
+//     logoutBtn.classList.add("show");
+// });
 
-userData.addEventListener('mouseout', () => {
-    logoutBtn.classList.remove("show");
-});
+// userData.addEventListener('mouseout', () => {
+//     logoutBtn.classList.remove("show");
+// });

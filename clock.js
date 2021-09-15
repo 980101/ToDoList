@@ -1,7 +1,7 @@
-const clockContainer = document.querySelector(".js-clock");
+const clockContainer = document.querySelector(".clock");
 const clockTitle = clockContainer.querySelector("h1");
-const clockSecond = document.querySelector(".second");
-const clockState = document.querySelector(".clock");
+const clockSecond = document.querySelector(".clock .detail-second");
+const clockState = document.querySelector(".clock .detail-meridiem");
 
 function getTime() {
     const date = new Date();

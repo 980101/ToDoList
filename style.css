@@ -17,7 +17,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 350px;
   height: 100vh;
   padding: 20px;
   background: rgb(148, 187, 233);
@@ -52,11 +51,7 @@ button {
 }
 
 h1 {
-  font-size: 132px;
-}
-
-h4 {
-  font-size: 36px;
+  font-size: 7rem;
 }
 
 span {
@@ -64,26 +59,26 @@ span {
 }
 
 /* 시계 in body */
-.js-clock {
+.clock {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 350px;
 }
 
-.js-clock .detail {
+.clock .detail {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 
-.js-clock .detail span:nth-child(1) {
+.clock .detail .detail-meridiem {
   border-bottom: solid 1px var(--light-gray-color);
 }
 
-/* list */
-.list {
+/* 본문 in body */
+main {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -94,73 +89,107 @@ span {
   border-radius: 20px;
 }
 
-/* 사용자 입력 in list */
-.list .js-form {
-  font-size: 20px;
+/* 사용자 입력 in main */
+/* (로그아웃) */
+main .form-user-logout {
+  align-items: flex-end;
+  font-size: 1.5rem;
 }
 
-.list .js-form input {
-  margin-left: 10px;
-}
-
-.list .js-greeting {
+main .form-user-logout .input-user {
+  display: flex;
   flex-direction: column;
-  font-size: 30px;
+  align-items: flex-end;
+  margin-right: 0.5rem;
 }
 
-.list .js-greeting span:last-child {
-  font-size: 20px;
-  color: var(--dark-gray-color);
+main .form-user-logout .input-user #name {
+  width: 100%;
+  height: 100%;
+  margin-top: 0.5rem;
 }
 
-.list .js-greeting .userData {
+main .form-user-logout .btn-login,
+.form-list .btn-add {
+  width: 50px;
+  height: 1.5rem;
+  border: 2px solid var(--black-color);
+  border-radius: 5px;
+  background: var(--black-color);
+  color: var(--white-color);
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+/* (로그인) */
+main .user-login {
+  flex-direction: column;
+  font-size: 1.5rem;
+}
+
+main .user-login .info {
   display: flex;
   align-items: center;
   width: fit-content;
 }
 
-/* (사용자 데이터 삭제 버튼) */
-.list .js-greeting .userData .delete {
+main .user-login .info .btn-logout {
   display: none;
   margin-left: 10px;
   font-size: 20px;
   color: var(--dark-gray-color);
 }
 
-.list .js-greeting .userData .delete.show {
+main .user-login .info .delete.show {
   display: block;
 }
 
-/* 리스트 입력 in list */
-.list .js-toDoForm {
+main .user-login .sign {
+  font-size: 1rem;
+  color: var(--dark-gray-color);
+}
+
+/* 리스트 입력 in main */
+main .form-list {
   display: flex;
-  flex-direction: column;
+  align-items: flex-end;
   margin-top: 20px;
 }
 
-.list .js-toDoForm label {
-  margin-bottom: 5px;
-  font-size: 24px;
+main .form-list .input-list {
+  margin-right: 1rem;
 }
 
-/* 리스트 내용 in list */
-.list .js-toDoList {
+main .form-list .input-list label {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+}
+
+/* JS 파일 수정 후, 다시 확인
+main .form-list .btn-add {
+} */
+
+/* 리스트 내용 in main */
+main .ul-list {
   width: 100%;
   overflow-y: scroll;
 }
 
-.list .js-toDoList::-webkit-scrollbar {
+/* (리스트 스크롤바) */
+main .ul-list::-webkit-scrollbar {
   width: 10px;
   background: none;
 }
 
-.list .js-toDoList::-webkit-scrollbar-thumb {
+main .ul-list::-webkit-scrollbar-thumb {
   width: 10px;
   background-color: var(--light-gray-color);
   border-radius: 5px;
 }
 
-.list .js-toDoList li {
+/* (리스트 아이템) */
+main .ul-list li {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -173,7 +202,7 @@ span {
 }
 
 /* (체크 박스) */
-.list .js-toDoList li div {
+main .ul-list li div {
   width: 20px;
   height: 20px;
   border: solid 1px var(--light-gray-color);
@@ -182,17 +211,17 @@ span {
   text-align: center;
 }
 
-.list .js-toDoList li div i {
+main .ul-list li div i {
   font-size: 5px;
   color: var(--white-color);
 }
 
-.list .js-toDoList li div.toggled {
+main .ul-list li div.toggled {
   background-color: green;
 }
 
 /* (할일 이름) */
-.list .js-toDoList li span {
+main.ul-list li span {
   width: 100%;
   margin: 0 10px;
   text-align: start;
@@ -200,19 +229,19 @@ span {
   color: var(--black-color);
 }
 
-.list .js-toDoList li span.toggled {
+main .ul-list li span.toggled {
   text-decoration: line-through;
   color: var(--dark-gray-color);
 }
 
 /* (할일 삭제 버튼) */
-.list .js-toDoList li button {
+main .ul-list button {
   width: 20px;
   height: 20px;
 }
 
 /* 날씨 in body */
-.js-weather {
+.weather {
   position: absolute;
   top: 10px;
   right: 30px;
@@ -221,7 +250,7 @@ span {
   width: fit-content;
 }
 
-.js-weather .icon {
+.weather .weather-icon {
   margin: 5px;
 }
 
@@ -239,16 +268,24 @@ span {
     flex-direction: row;
   }
 
-  .js-clock {
-    width: 60%;
+  main {
+    height: 100%;
   }
 
-  .list {
+  main .form-user-logout .input-user {
+    flex-direction: row;
+  }
+
+  main .form-user-logout .input-user #name {
+    margin-left: 0.5rem;
+  }
+
+  main .ul-list {
     width: 40%;
     height: 100%;
   }
 
-  .js-weather {
+  .weather {
     top: auto;
     bottom: 10px;
     left: 20px;

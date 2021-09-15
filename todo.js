@@ -1,18 +1,33 @@
-const toDoForm = document.querySelector(".js-toDoForm");
-const toDoInput = toDoForm.querySelector("input");    // element의 이름을 가져 오는 거니깐 form으로 하면 에러
-const toDoList = document.querySelector(".js-toDoList");
+const toDoForm = document.querySelector(".form-list");
+const toDoInput = toDoForm.querySelector(".form-list #item");
+const toDoList = document.querySelector(".ul-list");
 
 const TODOS_LS = "toDos";
 
 let toDos = [];
 
+function checkToDo(event) {
+    const div = event.target;
+    const span = div.parentNode.children[1];
+    div.classList.toggle("toggled");
+    span.classList.toggle("toggled");
+
+    if (div.classList.contains("toggled")) {
+        // 활성화 된 경우
+        const checkBox_icon = document.createElement("i");
+        checkBox_icon.setAttribute("class", "fas fa-check");
+        div.appendChild(checkBox_icon);
+    } else {
+        // 비활성화 된 경우
+        div.removeChild(document.querySelector(".fa-check"));
+    }
+}
+
 function deleteToDo(event) {
     const btn = event.target;
     const li = btn.parentNode;
     toDoList.removeChild(li);
-    const cleanToDos = toDos.filter(function filterFn(toDo) {
-        return toDo.id !== parseInt(li.id);
-    });
+    const cleanToDos = toDos.filter(toDo => toDo.id !== parseInt(li.id));
     toDos = cleanToDos;
     saveToDos();
 }
@@ -22,43 +37,32 @@ function saveToDos() {
 }
 
 function paintToDo(text) {
-    const li = document.createElement("li");
-    const check = document.createElement("div");
-    const span = document.createElement("span");
-    const delBtn = document.createElement("button");
+    const item = document.createElement("li");
+    const item_div_checkBox = document.createElement("div");
+    const item_span_content = document.createElement("span");
+    const item_btn_delete = document.createElement("button");
     const newId = toDos.length + 1;
 
-    // check in li 생성
-    // check 되었을 때
-    check.addEventListener("click", ()=> {
-        check.classList.toggle("toggled");
-        span.classList.toggle("toggled");
+    // checkBox
+    item_div_checkBox.addEventListener("click", checkToDo);
 
-        if (check.classList.contains("toggled")) {
-            // check 요소 안에 '체크 아이콘'을 추가한다.
-            const icon = document.createElement("i");
-            icon.setAttribute("class", "fas fa-check");
-            check.appendChild(icon);
-        } else {
-            check.removeChild(document.querySelector(".fa-check"));
-        }
-    });
+    // content
+    item_span_content.innerText = text;
 
-    // span in li 생성
-    span.innerText = text;
-    // delBtn in li 생성
-    // delBtn에 모양 적용
-    delBtn.setAttribute("class", "fas fa-times");
+    // btn_delete
+    item_btn_delete.setAttribute("class", "fas fa-times");
 
-    delBtn.addEventListener("click", deleteToDo);
+    item_btn_delete.addEventListener("click", deleteToDo);
     
-    li.appendChild(check);
-    li.appendChild(span);
-    li.appendChild(delBtn);
-    li.id = newId;
+    // item
+    let itemInfos = [item_div_checkBox, item_span_content, item_btn_delete];
+    for (let info of itemInfos) {
+        item.appendChild(info);
+    }
+    item.id = newId;
 
-    // li 표시
-    toDoList.appendChild(li);
+    toDoList.appendChild(item);
+
     const toDoObj = {
         text: text,
         id: newId
@@ -74,15 +78,12 @@ function handleSubmit(event) {
     toDoInput.value = "";   //입력 했을 때, input 공간을 비워준다.
 }
 
-//모든 item을 print 한다.
 function loadToDos() {
     const loadedToDos = localStorage.getItem(TODOS_LS);
 
     if(loadedToDos !== null) {
         const parsedToDos = JSON.parse(loadedToDos);    //parse: string->object
-        parsedToDos.forEach(function(toDo) {
-            paintToDo(toDo.text);
-        })
+        parsedToDos.forEach(toDo => paintToDo(toDo.text));
     }
 }
 
