@@ -166,10 +166,6 @@ main .form-list .input-list label {
   font-size: 1.5rem;
 }
 
-/* JS 파일 수정 후, 다시 확인
-main .form-list .btn-add {
-} */
-
 /* 리스트 내용 in main */
 main .ul-list {
   width: 100%;
@@ -268,7 +264,12 @@ main .ul-list button {
     flex-direction: row;
   }
 
+  .clock {
+    width: 55vw;
+  }
+
   main {
+    width: 45vw;
     height: 100%;
   }
 
@@ -281,7 +282,7 @@ main .ul-list button {
   }
 
   main .ul-list {
-    width: 40%;
+    width: 100%;
     height: 100%;
   }
 
