@@ -127,23 +127,6 @@ main .user-login {
   font-size: 1.5rem;
 }
 
-main .user-login .info {
-  display: flex;
-  align-items: center;
-  width: fit-content;
-}
-
-main .user-login .info .btn-logout {
-  display: none;
-  margin-left: 10px;
-  font-size: 20px;
-  color: var(--dark-gray-color);
-}
-
-main .user-login .info .delete.show {
-  display: block;
-}
-
 main .user-login .sign {
   font-size: 1rem;
   color: var(--dark-gray-color);
@@ -251,7 +234,8 @@ main .ul-list button {
 }
 
 .form,
-.greeting {
+.greeting,
+.logout {
   display: none;
 }
 

@@ -2,8 +2,6 @@ const form = document.querySelector('.form-user-logout');
 const input = form.querySelector('.form-user-logout #name');
 const greeting = document.querySelector('.user-login');
 const user = document.querySelector('.user-login .info');
-const user_name = document.querySelector(".user-login .info-name");
-const user_logout = document.querySelector('user-login .btn-logout');
 
 const USER_LS = "currentUser";
 const SHOWING_CN = "showing";
@@ -13,11 +11,6 @@ function saveName(text) {
     localStorage.setItem(USER_LS, text);
 }
 
-/* 사용자 로그아웃 */
-function deleteName() {
-    localStorage.removeItem(USER_LS);
-}
-
 function handleSubmit(event) {
     //event가 default 못하게 한다
     event.preventDefault();
@@ -25,6 +18,7 @@ function handleSubmit(event) {
     paintGreeting(currentValue);
     saveName(currentValue);
 }
+
 
 /* 사용자 데이터가 */
 
@@ -40,15 +34,7 @@ function askForName() {
 function paintGreeting(text) {
     form.classList.remove(SHOWING_CN);
     greeting.classList.add(SHOWING_CN);
-    user_name.innerHTML = `Hello, ${text}`;
-
-    user_name.addEventListener('mouseover', () => logoutBtn.classList.add("show"));
-    user_name.addEventListener('mouseout', () => logoutBtn.classList.remove("show"));
-    
-    logoutBtn.addEventListener('click', () => {
-        deleteName();
-        loadName();
-    });
+    user.innerHTML = `Hello, ${text}`;
 }
 
 function loadName() {
@@ -66,11 +52,3 @@ function init() {
 }
 
 init();
-
-// userData.addEventListener('mouseover', () => {
-//     logoutBtn.classList.add("show");
-// });
-
-// userData.addEventListener('mouseout', () => {
-//     logoutBtn.classList.remove("show");
-// });
